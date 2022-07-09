@@ -1,6 +1,8 @@
 ---
 import ResponsiveToggle from './ResponsiveToggle.astro'
 import { Icon } from 'astro-icon'
+
+const {BASE_URL=''} = import.meta.env
 ---
 
 <div id="main-navigation" class="is-desktop">
@@ -19,13 +21,13 @@ import { Icon } from 'astro-icon'
         </li>
         <slot />
         <li class="menu-item bottom-position">
-          <a href="/login/">
+          <a href={`${BASE_URL}/login/`}>
             <Icon pack="majesticons" name="logout-line" /> 
             <span class="sr-only">Logout</span>
           </a>
         </li>
         <li class="menu-item bottom-position user-avatar">
-          <a href="/settings/" class="logout-link">
+          <a  href={`${BASE_URL}/settings/`} class="logout-link">
             <img src="/user-avatar.png" alt="">
             <span class="sr-only">Settings</span>
           </a>
@@ -34,7 +36,7 @@ import { Icon } from 'astro-icon'
     </nav>
   </div>
   <div class="container mobile-menu padding-16">
-    <a href="/">
+    <a  href={`${BASE_URL}/`}>
       <img src={(await import('../assets/img/logo.svg')).default} alt="Your Logo">
     </a>
     <ResponsiveToggle client:load />
@@ -42,13 +44,13 @@ import { Icon } from 'astro-icon'
       <ul>
         <slot />
         <li class="menu-item">
-          <a href="/login">
+          <a  href={`${BASE_URL}/login`}>
             <Icon pack="majesticons" name="logout-line" /> 
             <span class="sr-only">Logout</span>
           </a>
         </li>
         <li class="menu-item user-avatar">
-          <a href="/settings">
+          <a  href={`${BASE_URL}/settings`}>
             <img src="/user-avatar.png" alt="">
             <span class="sr-only">Settings</span>
           </a>

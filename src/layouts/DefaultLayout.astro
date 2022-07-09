@@ -4,6 +4,7 @@ import Navigation from '../components/Navigation.astro'
 import { DarkMode, SkipLinks } from 'accessible-astro-components'
 import { Icon } from 'astro-icon'
 
+const {BASE_URL=''} = import.meta.env
 const {title} = Astro.props
 let subtitle = 'Accessible Astro Dashboard'
 ---
@@ -42,31 +43,31 @@ let subtitle = 'Accessible Astro Dashboard'
     <div class="admin-interface">
       <Navigation>
         <li class="menu-item">
-          <a href="/">
+          <a href={`${BASE_URL}/`}>
             <Icon pack="majesticons" name="home-line" /> 
             <span class="sr-only">Dashboard</span>
           </a>
         </li>
         <li class="menu-item">
-          <a href="/products/">
+          <a href={`${BASE_URL}/products/`}>
             <Icon pack="majesticons" name="shopping-cart-line" /> 
             <span class="sr-only">Products</span>
           </a>
         </li>
         <li class="menu-item">
-          <a href="/users/">
+          <a href={`${BASE_URL}/users/`}>
             <Icon pack="majesticons" name="users-line" /> 
             <span class="sr-only">Users</span>
           </a>
         </li>
         <li class="menu-item">
-          <a href="/messages/">
+          <a href={`${BASE_URL}/messages/`}>
             <Icon pack="majesticons" name="messages-line" /> 
             <span class="sr-only">Messages</span>
           </a>
         </li>
         <li class="menu-item">
-          <a href="/media/">
+          <a href={`${BASE_URL}/media/`}>
             <Icon pack="majesticons" name="image-line" /> 
             <span class="sr-only">Media</span>
           </a>
@@ -83,7 +84,7 @@ let subtitle = 'Accessible Astro Dashboard'
   let isLoggedIn = await localStorage.getItem('isLoggedIn')
 
   if (isLoggedIn === null) {
-    window.location.href = '/login'
+    //window.location.href = `${BASE_URL}/login`
   }
 </script>
 
