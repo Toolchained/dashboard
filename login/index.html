@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- open graph -->
+    <meta property="og:title" content="Accessible Astro Dashboard">
+    <meta property="og:description" content="An Accessible Dashboard Theme for Astro including a login page, a dashboard page and several other pages and components.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dashboard.accessible-astro.dev">
+    <meta property="og:image" content="/social-preview-image.png">
+
+    <!-- page title -->
+    <title>Login - Accessible Astro Dashboard</title>
+  <link rel="stylesheet" href="/dashboard/assets/bddc05d4.32098eb4.css" />
+<link rel="stylesheet" href="/dashboard/assets/859603c1.c43166c4.css" /><script type="module">const e=document.querySelector(".login-form"),t=e.querySelector(".notification"),n=e.querySelector('input[name="email"]'),i=e.querySelector('input[name="password"]'),l=e.querySelector("button");t.style.display="none";l.addEventListener("click",o=>{o.preventDefault(),n.value==="admin@astro.demo"&&i.value==="Astronaut570"?(localStorage.setItem("isLoggedIn","true"),window.location.href="/"):t.style.display="flex"});
+</script></head>
+  <body>
+    <main id="main-content">
+      <section class="bg-neutral-100 astro-QSLCQOJV">
+    <div class="login astro-QSLCQOJV">
+      <div class="login__inner reveal h-screen astro-QSLCQOJV">
+        <div class="inner__brand astro-QSLCQOJV">
+          <div class="bg-neutral-900 radius-large space-8 astro-QSLCQOJV">
+            <img class="brand__logo radius-large astro-QSLCQOJV" src="/astro-logo.svg" alt="">
+          </div>
+          <div class="brand__text astro-QSLCQOJV">
+            <span class="astro-QSLCQOJV">Astro Dashboard</span>
+            <span class="astro-QSLCQOJV">An Accessible Astro Theme</span>
+          </div>
+        </div>
+        <div class="inner__form space-content astro-QSLCQOJV">
+          <div class="notification type-${type}" role="${role}" aria-live="${ariaLive}">
+  <svg viewBox="0 0 24 24" class="astro-QSLCQOJV" astro-icon="majesticons:information-circle-line"><path fill="currentColor" d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12zm10 5a1 1 0 0 0 1-1v-4a1 1 0 1 0-2 0v4a1 1 0 0 0 1 1zm0-10a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H12z"/></svg><p class="size-14 astro-QSLCQOJV">Log in using <strong class="astro-QSLCQOJV">admin@astro.demo</strong> and <strong class="astro-QSLCQOJV">Astronaut570</strong>.</p>
+</div>
+          <div class="space-content astro-QSLCQOJV">
+            <h1 class="astro-QSLCQOJV">Login</h1>
+            <form class="login-form space-content" method="post">
+  <div class="notification type-${type}" role="${role}" aria-live="${ariaLive}">
+  <svg viewBox="0 0 24 24" astro-icon="majesticons:emoji-sad-line"><path fill="currentColor" d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0zm8-10C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM9.757 15.654a1 1 0 1 1-1.514-1.308c.81-.937 2.04-1.592 3.757-1.592 1.716 0 2.947.655 3.757 1.592a1 1 0 1 1-1.514 1.308c-.419-.485-1.091-.9-2.243-.9s-1.824.415-2.243.9zM8 10a1 1 0 0 1 1-1h.01a1 1 0 0 1 0 2H9a1 1 0 0 1-1-1zm7-1a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H15z"/></svg><p class="size-12">Incorrect email and password combination. Please try again.</p>
+</div>
+  <div class="login-form__controls">
+    <label for="email">Email</label>
+    <input type="email" name="email" required>
+  </div>
+  <div class="login-form__controls">
+    <label for="password">Password</label>
+    <input type="password" name="password" required>
+  </div>
+  <button class="button color-secondary behavior-full" type="submit">Login</button>
+  <label class="checkbox">
+    <input type="checkbox" name="remember">
+    <span>Remember me</span>
+  </label>
+  <a href="#">Forgot password?</a>
+</form> 
+
+
+          </div>
+        </div>
+        <div class="login__footer text-neutral-700 astro-QSLCQOJV">
+          <p class="astro-QSLCQOJV"><em class="astro-QSLCQOJV">Build fast dashboards, faster.</em></p>
+        </div>
+      </div>
+      <div class="login__background h-screen astro-QSLCQOJV"></div>
+    </div>
+  </section>
+    </main>
+  
+</body></html>
+

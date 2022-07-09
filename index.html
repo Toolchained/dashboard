@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="astro-EPFGLJKT">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- open graph -->
+    <meta property="og:title" content="Accessible Astro Dashboard">
+    <meta property="og:description" content="An Accessible Dashboard Theme for Astro including a login page, a dashboard page and several other pages and components.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dashboard.accessible-astro.dev">
+    <meta property="og:image" content="/social-preview-image.png">
+
+    <!-- page title -->
+    <title>Dashboard - Accessible Astro Dashboard</title>
+  <link rel="stylesheet" href="/dashboard/assets/e8eeaf4a.a8bf12be.css" />
+<link rel="stylesheet" href="/dashboard/assets/c12a2a21.c9c6e07d.css" />
+<link rel="stylesheet" href="/dashboard/assets/bddc05d4.32098eb4.css" /><script type="module" src="/dashboard/hoisted.49201141.js"></script></head>
+  <body>
+    <header class="astro-EPFGLJKT">
+      <div>
+  <nav class="skip-links" aria-label="Skiplinks">
+    <ul>
+      <li>
+        <a href="#main-navigation">
+          Skip to main menu
+        </a>
+      </li>
+      <li>
+        <a href="#main-content">
+          Skip to main content
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script type="module">
+  // variables
+  const skipLinks = [...document.querySelectorAll('.skip-links a')]
+
+  // execution
+  if (skipLinks.length > 0) {
+    skipLinks.forEach(link => {
+      link.addEventListener('keydown', event => {
+        if (!event.target.closest('a')) return
+        const key = event.key
+
+        if (key !== 'Enter') return
+        event.preventDefault()
+        const target = event.target.getAttribute('href')
+
+        if (target === '#main-navigation') {
+          const navigation = document.querySelector('#main-navigation')
+          navigation.querySelector('a').focus()
+        }
+
+        if (target === '#main-content') {
+          const h1 = document.querySelector('h1')
+          h1.setAttribute('tabindex', '-1')
+          h1.focus()
+        }
+      })
+    })
+  }
+</script>
+
+
+    </header>
+    <div class="ui-controls astro-EPFGLJKT">
+      <button class="darkmode-toggle" aria-pressed="false" aria-label="Enable dark mode">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M9.353 3C5.849 4.408 3 7.463 3 11.47A9.53 9.53 0 0 0 12.53 21c4.007 0 7.062-2.849 8.47-6.353C8.17 17.065 8.14 8.14 9.353 3z"></path></svg>
+</button>
+
+<script type="module">
+  // variables
+  let darkMode = localStorage.getItem('darkMode')
+  const darkModeToggle = document.querySelector('.darkmode-toggle')
+
+  // functions
+  const enableDarkMode = () => {
+    document.body.classList.add('darkmode')
+    darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 3a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0V3zM5.707 4.293a1 1 0 0 0-1.414 1.414l1 1a1 1 0 0 0 1.414-1.414l-1-1zm14 0a1 1 0 0 0-1.414 0l-1 1a1 1 0 0 0 1.414 1.414l1-1a1 1 0 0 0 0-1.414zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm-9 4a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2H3zm17 0a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2h-1zM6.707 18.707a1 1 0 1 0-1.414-1.414l-1 1a1 1 0 1 0 1.414 1.414l1-1zm12-1.414a1 1 0 0 0-1.414 1.414l1 1a1 1 0 0 0 1.414-1.414l-1-1zM13 20a1 1 0 1 0-2 0v1a1 1 0 1 0 2 0v-1z" fill="currentColor"/></svg>`
+    darkModeToggle.setAttribute('aria-pressed', 'true')
+    darkModeToggle.setAttribute('aria-label', 'Disable dark mode')
+    localStorage.setItem('darkMode', 'enabled')
+  }
+
+  const disableDarkMode = () => {
+    document.body.classList.remove('darkmode')
+    darkModeToggle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M9.353 3C5.849 4.408 3 7.463 3 11.47A9.53 9.53 0 0 0 12.53 21c4.007 0 7.062-2.849 8.47-6.353C8.17 17.065 8.14 8.14 9.353 3z"/></svg>`
+    darkModeToggle.setAttribute('aria-pressed', 'false')
+    darkModeToggle.setAttribute('aria-label', 'Enable dark mode')
+    localStorage.setItem('darkMode', null)
+  }
+
+  // execution
+  if (darkMode === 'enabled') enableDarkMode()
+
+  darkModeToggle.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkMode')
+
+    darkMode !== 'enabled'
+      ? enableDarkMode()
+      : disableDarkMode()
+  })
+</script>
+    </div>
+    <div class="admin-interface astro-EPFGLJKT">
+      <div id="main-navigation" class="is-desktop">
+  <div class="desktop-menu">
+    <nav>
+      <ul>
+        <li class="brand-logo">
+          <img src="/dashboard/assets/logo.c3b366ff.svg">
+          <span class="sr-only">Brand Name</span>
+        </li>
+        <li class="menu-item">
+          <button class="toggle-expanded-view" aria-expanded="false">
+            <svg viewBox="0 0 24 24" astro-icon="majesticons:chevron-double-right-line"><g fill="currentColor"><path d="M12.293 5.293a1 1 0 0 0 0 1.414L17.586 12l-5.293 5.293a1 1 0 0 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6a1 1 0 0 0-1.414 0z"/><path d="M4.293 5.293a1 1 0 0 0 0 1.414L9.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6a1 1 0 0 0-1.414 0z"/></g></svg> 
+            <span class="sr-only">Expand menu</span>
+          </button>
+        </li>
+        <li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:home-line"><path fill="currentColor" d="M10.698 2.799a2 2 0 0 1 2.604 0l6.336 5.43 2.487 1.99a1 1 0 1 1-1.25 1.562l-.875-.7V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.92l-.875.7a1 1 0 0 1-1.25-1.562l2.487-1.99 6.336-5.43zM6 9.46V19h3v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4h3V9.46l-6-5.143L6 9.46zM13 19v-4h-2v4h2z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Dashboard</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/products/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:shopping-cart-line"><path fill="currentColor" d="M1 4a1 1 0 0 1 1-1h2.5a1 1 0 0 1 .97.757L5.78 5H20a1 1 0 0 1 .98 1.196l-2 10A1 1 0 0 1 18 17H7a1 1 0 0 1-.98-.804L4.023 6.22 3.72 5H2a1 1 0 0 1-1-1zm5.22 3 1.6 8h9.36l1.6-8H6.22zM14 20a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm-7 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Products</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/users/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:users-line"><g fill="currentColor"><path d="M9 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 9a6 6 0 1 1 12 0A6 6 0 0 1 3 9z"/><path d="M3.124 19h11.752c-.547-2.197-2.86-4-5.876-4-3.016 0-5.329 1.803-5.876 4zM1 20c0-4.005 3.732-7 8-7s8 2.995 8 7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm15.001-7.126a7.844 7.844 0 0 1-.386.626c.623.55 1.177 1.176 1.647 1.864 1.871.635 3.214 2.03 3.614 3.636H18.8c.131.646.2 1.315.2 2h3a1 1 0 0 0 1-1c0-2.792-1.814-5.093-4.358-6.231a6 6 0 0 0-4.309-10.732A8.034 8.034 0 0 1 16 5.127a4.002 4.002 0 0 1 0 7.747z"/></g></svg> 
+            <span class="sr-only astro-EPFGLJKT">Users</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/messages/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:messages-line"><path fill="currentColor" d="M2 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v1h1a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-1v3a1 1 0 0 1-1.707.707L12.586 18H7a1 1 0 0 1-1-1v-3H5a3 3 0 0 1-3-3V5zm16 3v3a3 3 0 0 1-3 3h-3.586l-2 2H13a1 1 0 0 1 .707.293L16 18.586V17a1 1 0 0 1 1-1h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-1zM8 14.586l2.293-2.293A1 1 0 0 1 11 12h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 1 1 1v1.586z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Messages</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/media/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:image-line"><g fill="currentColor"><path d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H6z"/><path d="M14.626 13.04a1 1 0 0 0-1.371-.04l-7.59 6.747a1 1 0 1 1-1.33-1.494l7.591-6.748a3 3 0 0 1 4.115.121l4.666 4.667a1 1 0 0 1-1.414 1.414l-4.667-4.666zM6 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></g></svg> 
+            <span class="sr-only astro-EPFGLJKT">Media</span>
+          </a>
+        </li>
+        <li class="menu-item bottom-position">
+          <a href="/dashboard/login/">
+            <svg viewBox="0 0 24 24" astro-icon="majesticons:logout-line"><g fill="currentColor"><path d="M6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h5a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5a1 1 0 1 0 0-2H6z"/><path d="M15.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L17.586 13H10a1 1 0 1 1 0-2h7.586l-2.293-2.293a1 1 0 0 1 0-1.414z"/></g></svg> 
+            <span class="sr-only">Logout</span>
+          </a>
+        </li>
+        <li class="menu-item bottom-position user-avatar">
+          <a href="/dashboard/settings/" class="logout-link">
+            <img src="/user-avatar.png" alt="">
+            <span class="sr-only">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container mobile-menu padding-16">
+    <a href="/dashboard/">
+      <img src="/dashboard/assets/logo.c3b366ff.svg" alt="Your Logo">
+    </a>
+    <button class="responsive-toggle" aria-expanded="false" aria-label="Open menu navigation">
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 8h12M6 12h12M6 16h12"></path></svg>
+</button>
+
+
+
+
+    <nav>
+      <ul>
+        <li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:home-line"><path fill="currentColor" d="M10.698 2.799a2 2 0 0 1 2.604 0l6.336 5.43 2.487 1.99a1 1 0 1 1-1.25 1.562l-.875-.7V19a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.92l-.875.7a1 1 0 0 1-1.25-1.562l2.487-1.99 6.336-5.43zM6 9.46V19h3v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4h3V9.46l-6-5.143L6 9.46zM13 19v-4h-2v4h2z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Dashboard</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/products/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:shopping-cart-line"><path fill="currentColor" d="M1 4a1 1 0 0 1 1-1h2.5a1 1 0 0 1 .97.757L5.78 5H20a1 1 0 0 1 .98 1.196l-2 10A1 1 0 0 1 18 17H7a1 1 0 0 1-.98-.804L4.023 6.22 3.72 5H2a1 1 0 0 1-1-1zm5.22 3 1.6 8h9.36l1.6-8H6.22zM14 20a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm-7 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Products</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/users/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:users-line"><g fill="currentColor"><path d="M9 5a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 9a6 6 0 1 1 12 0A6 6 0 0 1 3 9z"/><path d="M3.124 19h11.752c-.547-2.197-2.86-4-5.876-4-3.016 0-5.329 1.803-5.876 4zM1 20c0-4.005 3.732-7 8-7s8 2.995 8 7a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm15.001-7.126a7.844 7.844 0 0 1-.386.626c.623.55 1.177 1.176 1.647 1.864 1.871.635 3.214 2.03 3.614 3.636H18.8c.131.646.2 1.315.2 2h3a1 1 0 0 0 1-1c0-2.792-1.814-5.093-4.358-6.231a6 6 0 0 0-4.309-10.732A8.034 8.034 0 0 1 16 5.127a4.002 4.002 0 0 1 0 7.747z"/></g></svg> 
+            <span class="sr-only astro-EPFGLJKT">Users</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/messages/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:messages-line"><path fill="currentColor" d="M2 5a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v1h1a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-1v3a1 1 0 0 1-1.707.707L12.586 18H7a1 1 0 0 1-1-1v-3H5a3 3 0 0 1-3-3V5zm16 3v3a3 3 0 0 1-3 3h-3.586l-2 2H13a1 1 0 0 1 .707.293L16 18.586V17a1 1 0 0 1 1-1h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-1zM8 14.586l2.293-2.293A1 1 0 0 1 11 12h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 1 1 1v1.586z"/></svg> 
+            <span class="sr-only astro-EPFGLJKT">Messages</span>
+          </a>
+        </li><li class="menu-item astro-EPFGLJKT">
+          <a href="/dashboard/media/" class="astro-EPFGLJKT">
+            <svg viewBox="0 0 24 24" class="astro-EPFGLJKT" astro-icon="majesticons:image-line"><g fill="currentColor"><path d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zm3-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H6z"/><path d="M14.626 13.04a1 1 0 0 0-1.371-.04l-7.59 6.747a1 1 0 1 1-1.33-1.494l7.591-6.748a3 3 0 0 1 4.115.121l4.666 4.667a1 1 0 0 1-1.414 1.414l-4.667-4.666zM6 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/></g></svg> 
+            <span class="sr-only astro-EPFGLJKT">Media</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/dashboard/login">
+            <svg viewBox="0 0 24 24" astro-icon="majesticons:logout-line"><g fill="currentColor"><path d="M6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h5a1 1 0 1 0 0-2H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5a1 1 0 1 0 0-2H6z"/><path d="M15.293 7.293a1 1 0 0 1 1.414 0l4 4a1 1 0 0 1 0 1.414l-4 4a1 1 0 0 1-1.414-1.414L17.586 13H10a1 1 0 1 1 0-2h7.586l-2.293-2.293a1 1 0 0 1 0-1.414z"/></g></svg> 
+            <span class="sr-only">Logout</span>
+          </a>
+        </li>
+        <li class="menu-item user-avatar">
+          <a href="/dashboard/settings">
+            <img src="/user-avatar.png" alt="">
+            <span class="sr-only">Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+
+    
+      <main id="main-content" class="astro-EPFGLJKT">
+        <section>
+    <h1>Welcome Astronaut 🧑‍🚀</h1><br>
+    <p class="size-20">Build fast dashboards, faster (and accessible).</p>
+  </section><section class="margin-32">
+    <div class="space-content">
+      <div class="contents">
+        <h2>Widgets</h2>
+        <p id="current-time" class="size-12"></p>
+      </div>
+      <div class="grid small-grid-1 medium-grid-2 large-grid-3 equal-height">
+        <div class="dashboard-widget radius-large space-24 elevation-400 space-content type-${type} astro-3LHNQLN5">
+  <p class="size-48 astro-3LHNQLN5">
+    <strong class="astro-3LHNQLN5">+54</strong>
+  </p>
+  <p class="size-20 astro-3LHNQLN5">
+    <em class="astro-3LHNQLN5">New messages</em>
+  </p>
+</div>
+
+
+        <div class="dashboard-widget radius-large space-24 elevation-400 space-content type-${type} astro-3LHNQLN5">
+  <p class="size-48 astro-3LHNQLN5">
+    <strong class="astro-3LHNQLN5">+33</strong>
+  </p>
+  <p class="size-20 astro-3LHNQLN5">
+    <em class="astro-3LHNQLN5">Products sold</em>
+  </p>
+</div>
+
+
+        <div class="dashboard-widget radius-large space-24 elevation-400 space-content type-${type} astro-3LHNQLN5">
+  <p class="size-48 astro-3LHNQLN5">
+    <strong class="astro-3LHNQLN5">-120</strong>
+  </p>
+  <p class="size-20 astro-3LHNQLN5">
+    <em class="astro-3LHNQLN5">Images deleted</em>
+  </p>
+</div>
+
+
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+        <div class="radius-large space-96" style="border: 4px dashed grey;"></div>
+      </div>
+    </div>
+  </section>
+      </main>
+    </div>
+  
+
+
+
+
+</body></html>
